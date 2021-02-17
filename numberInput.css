@@ -1,0 +1,79 @@
+.number_input{
+    position: relative;
+	margin-left: 1em;
+}
+
+.input_number_input{
+    box-sizing: border-box;
+    padding-left: 10px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    outline: none;
+	box-shadow:none;
+}
+
+
+.input_number_input:focus {
+    border-color: #bbbbbb;
+}
+
+.plus_number_input{
+    width: 0px;
+    border: 5px solid transparent;
+    border-bottom: 7px solid #b5b5b5;
+    position: absolute;
+    top: 5%;
+    right: 5px;
+    cursor: pointer;
+}
+
+.minus_number_input{
+    width: 0px;
+    border: 5px solid transparent;
+    border-top: 7px solid #b5b5b5;
+    position: absolute;
+    top: 60%;
+    right: 5px;
+    cursor: pointer;
+}
+
+.plus_number_input:hover {
+    border-bottom-color: #6b6b6b;
+}
+
+.minus_number_input:hover {
+    border-top-color: #6b6b6b;
+}
+
+.number_input_mobile{
+    position: relative;
+    display: inline-flex;
+    padding: 5px 0;
+}
+
+.minus_number_input_mobile{
+    width: 0px;
+    border: 5px solid transparent;
+    border-top: 7px solid #b5b5b5;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30%;
+    left: -30%;
+}
+.plus_number_input_mobile{
+    width: 0px;
+    border: 5px solid transparent;
+    border-bottom: 7px solid #b5b5b5;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40%;
+    right: -30%;
+}
+.plus_minus_input_mobile{
+    background-color: #eeeeee;
+    min-width: 38px;
+    width: auto;
+    outline: none;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
