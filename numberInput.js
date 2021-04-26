@@ -14,6 +14,9 @@ class NumberInput {
                                 height: ${this.options.height || '35px'}`
 
         this.options.integer = this.options.integer
+
+        if (this.options.forceMinimal === undefined) this.options.forceMinimal = true
+
         if (this.options.integer === undefined) {
             if (this.$el.querySelector('input').dataset.integer) {
                 this.options.integer = strToBool(this.$el.querySelector('input').dataset.integer)
@@ -67,13 +70,15 @@ class NumberInput {
         if (this.options.integer) { newVal = newVal.replace(/[.,]/g, "") }
         else { newVal = newVal.replace(/,/g, '.') }
 
-        //if (!newVal) newVal = this.options.min
         if (parseFloat(newVal) > this.options.max) newVal = this.options.max
-        //if (newVal[newVal.length - 1] !== '.' && parseFloat(newVal) < this.options.min) newVal = this.options.min
+
+        if (this.options.forceMinimal) {
+            if (!newVal) newVal = this.options.min
+            if (newVal[newVal.length - 1] !== '.' && parseFloat(newVal) < this.options.min) newVal = this.options.min
+        }
 
         this.$input.value = newVal
-        this.options.onChange(newVal, this.$el.id)
-
+        if (newVal >= this.options.min) this.options.onChange(newVal, this.$el.id)
     }
 
     clickHandler(event) {
