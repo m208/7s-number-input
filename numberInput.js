@@ -67,9 +67,9 @@ class NumberInput {
         if (this.options.integer) { newVal = newVal.replace(/[.,]/g, "") }
         else { newVal = newVal.replace(/,/g, '.') }
 
-        if (!newVal) newVal = this.options.min
+        //if (!newVal) newVal = this.options.min
         if (parseFloat(newVal) > this.options.max) newVal = this.options.max
-        if (newVal[newVal.length - 1] !== '.' && parseFloat(newVal) < this.options.min) newVal = this.options.min
+        //if (newVal[newVal.length - 1] !== '.' && parseFloat(newVal) < this.options.min) newVal = this.options.min
 
         this.$input.value = newVal
         this.options.onChange(newVal, this.$el.id)
